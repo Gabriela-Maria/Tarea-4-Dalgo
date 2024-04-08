@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class Problema2 {
 
@@ -91,9 +92,13 @@ public class Problema2 {
 
     public static void main(String[] args) {
         Problema2 problema = new Problema2();
-        String fileName = "distancesDisconnected.txt";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nombre de archivo txt de prueba en carpeta data (ej: distancesDisconnected2): ");
+        String filename = scanner.nextLine();
+        scanner.close();
+
         try {
-            int[][] grafo = problema.loadingFile(fileName);
+            int[][] grafo = problema.loadingFile(filename + ".txt");
             ArrayList<Queue<Integer>> queue = problema.bfs(grafo);
             System.out.println(queue);
             
