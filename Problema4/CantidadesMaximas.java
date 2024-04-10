@@ -14,7 +14,7 @@ public class CantidadesMaximas {
         try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(" ");
+                String[] partes = linea.split(",");
                 if (partes.length == 2) {
                     vertices.add(new String[]{partes[0], partes[1]});
                 } else if (partes.length == 3) {
