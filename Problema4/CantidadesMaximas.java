@@ -35,9 +35,17 @@ public class CantidadesMaximas {
     }
 
     public void imprimirRed() {
-        // Esta función necesitará ser adaptada para recorrer el grafo y
-        // imprimir información sobre Vertices y conexiones.
-        // La implementación específica dependerá de cómo diseñaste las clases Vertice y Grafo.
+        System.out.println("Vertices:");
+        for (Vertice vertice : grafo.getVertices().values()) {
+            String tipo = String.valueOf(vertice.getTipo());
+            System.out.println("ID: " + vertice.getIdVertice() + ", Tipo: " + tipo + ", Capacidad: " + vertice.getCapacidad());
+        }
+        System.out.println("Conexiones:");
+        for (Vertice vertice : grafo.getVertices().values()) {
+            for (Conexion conexion : vertice.getConexiones()) {
+                System.out.println("De: " + vertice.getIdVertice() + " a " + conexion.getDestino() + ", Capacidad: " + conexion.getCapacidadCamion());
+            }
+        }
     }
 
     public static void main(String[] args) {

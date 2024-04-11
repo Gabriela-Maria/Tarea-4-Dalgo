@@ -29,10 +29,6 @@ public class Grafo {
 
     public void agregarConexion(int origen, int destino, Integer capacidadCamion) {
         Vertice verticeOrigen = vertices.get(origen);
-        if (verticeOrigen != null && verticeOrigen.getTipo() == 'B' && !vertices.containsKey(destino + 1000)) {
-            // Si el origen es una bodega y el destino no es un nodo B', ajustar a B'
-            destino += 1000;
-        }
         if (verticeOrigen != null) {
             verticeOrigen.agregarConexion(destino, capacidadCamion);
         }
@@ -49,4 +45,22 @@ public class Grafo {
             }
         }
     }
+
+    
+    public Map<Integer, Vertice> getVertices() {
+        return vertices;
+    }
+
+    public void setVertices(Map<Integer, Vertice> vertices) {
+        this.vertices = vertices;
+    }
+
+    public int getIdSuperfuente() {
+        return idSuperfuente;
+    }
+
+    public int getIdSupersink() {
+        return idSupersink;
+    }
+
     }

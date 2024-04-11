@@ -57,14 +57,3 @@ public class Vertice {
     // Puede agregar más métodos aquí según sea necesario
 }
 
-class Conexion {
-    private int destino;
-    private Integer capacidadCamion;
-
-    public Conexion(int destino, Integer capacidadCamion) {
-        this.destino = destino;
-        this.capacidadCamion = capacidadCamion;
-    }
-
-    // Getters y setters según sea necesario
-}
