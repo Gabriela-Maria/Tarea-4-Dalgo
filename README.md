@@ -9,21 +9,18 @@ Para correr el programa seguir los siguientes pasos:
 3- Luego ingresa el número correspondiente al algoritmo que deseas usar (1 para Dijkstra, 2 para Bellman Ford, 3 para Floyd Warschall).
 
 # Problema 1.1 Dijkstra
-
 |E/S|Descripcion|
 |-------|--------|
 |Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. Hay 3 posibilidades de valores en esta matriz. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. La ultima posibilidad para los valores de esta matriz es que el valor sea positivo representando el costo de ir de un vertice al otro.|
 |Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en 'OUT_dijkstra.txt' de la carpeta data al correr el programa .|
 
 # Problema 1.2 Bellman Ford
-
 |E/S|Descripcion|
 |-------|--------|
 |Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. Los otros valores, que pueden ser tanto positivos como negativos, representan el costo de ir de un vertice a otro.|
 |Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en 'OUT_bellmanFord.txt' de la carpeta data al correr el programa.|
 
 # Problema 1.3 Floyd Warschall
-
 |E/S|Descripcion|
 |-------|--------|
 |Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. Hay 3 posibilidades de valores en esta matriz. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. La ultima posibilidad para los valores de esta matriz es que el valor sea positivo representando el costo de ir de un vertice al otro.|
@@ -49,3 +46,16 @@ Ejemplo grafico de entrada (mapUndirected):
 |Salida| Las calles que ahora deben ser doble vías, los arcos que hacen parte del MST.|
 
 # Problema 4
+
+Explicación del archivo red.txt que contiene los datos con los que se crea el grafo dirigido que representa una red de distribución : 
+1- Cada línea del archivo representa un elemento diferente en la red: fábricas (F), librerías (L), bodegas (B), y camiones (C).
+Fabricas: Incluyen el identificador 'F' y el id de la fabrica. Ejemplo: F,1 representa una fábrica con identificador 1.
+Librerías: Incluyen el identificador 'L' y el id de la fabrica. Ejemplo: L,1 representa una libreria con identificador 1.
+Bodegas: Incluyen el identificador 'B', el id de la bodega y la capacidad de la bodega. Ejemplo: B,1,2 representa una bodega con identificador 1 y con capacidad 2.
+Camiones: Incluyen el identificador 'C', el vertice origen (que debe ser una fabrica o bodega), el vertice desrino (que debe ser una bodega o una libreria) y la capacidad del camion. Ejemplo: C,1,2,3 representa un camion que va de la fabrica con id 1 a la bodega con id 2, con una capacidad de 3.
+
+
+|E/S|Descripcion|
+|-------|--------|
+|Entrada| |
+|Salida| |
