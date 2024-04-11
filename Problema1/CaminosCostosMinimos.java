@@ -68,30 +68,43 @@ public class CaminosCostosMinimos {
     }
     
     private static void ejecutarAlgoritmoSeleccionado(int algoritmoSelec, int[][] grafo) {
+        long startTime, endTime;
+        double segundos;
         switch (algoritmoSelec) {
-
             case 1: // Caso para Dijkstra
-            int[][] distanciasDijkstra = Dijkstra.distanciasMinimas(grafo);
-            escribirMatriz(distanciasDijkstra, "dijkstra");
-            break;
+                startTime = System.nanoTime();
+                int[][] distanciasDijkstra = Dijkstra.distanciasMinimas(grafo);
+                endTime = System.nanoTime();
+                segundos = (endTime - startTime) / 1_000_000_000.0; // convierte de nanosegundos a segundos
+                escribirMatriz(distanciasDijkstra, "dijkstra");
+                System.out.printf("Tiempo de ejecución para Dijkstra: %.6f segundos.\n", segundos);
+                break;
 
             case 2: // Caso para Bellman Ford
-            int[][] distanciaBellman = BellmanFord.distanciasMinimas(grafo);
-            escribirMatriz(distanciaBellman,"bellmanFord");
-            break;
-            
+                startTime = System.nanoTime();
+                int[][] distanciaBellman = BellmanFord.distanciasMinimas(grafo);
+                endTime = System.nanoTime();
+                segundos = (endTime - startTime) / 1_000_000_000.0;
+                escribirMatriz(distanciaBellman, "bellmanFord");
+                System.out.printf("Tiempo de ejecución para Bellman Ford: %.6f segundos.\n", segundos);
+                break;
 
             case 3: // Opción para Floyd Warschall
+                startTime = System.nanoTime();
                 FloydWarschall floyd = new FloydWarschall();
                 int[][] distancias = floyd.floydWarschall(grafo);
+                endTime = System.nanoTime();
+                segundos = (endTime - startTime) / 1_000_000_000.0;
                 escribirMatriz(distancias, "floydWarschall");
+                System.out.printf("Tiempo de ejecución para Floyd Warschall: %.6f segundos.\n", segundos);
                 break;
-                
+
             default:
                 System.out.println("Algoritmo no soportado o número incorrecto.");
                 break;
         }
     }
+
 
     private static void escribirMatriz(int[][] matriz, String userInput) {
         String outputPath = "./data/OUT_" + userInput + ".txt";
