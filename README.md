@@ -27,7 +27,8 @@ Para correr el programa seguir los siguientes pasos:
 |Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en 'OUT_floydWarschall.txt' de la carpeta data al correr el programa.|
 
 
-Comparación de tiempos de ejecución:
+## Comparación de tiempos de ejecución:
+
 ### Dijkstra
 
 |Tamaño |Tiempo (s) |
@@ -74,8 +75,8 @@ Ejemplo grafico de entrada (mapUndirected):
 # Problema 4
 
 Para correr el programa seguir los siguientes pasos:
-1- Para poder probar el programa, hay que incluir el archivo txt de acuerdo a la especificacion de este que se explicará acontinuación, en "data". 
-2- Correr la clase "CantidadesMaximas" y luego Ingresar el nombre del archivo de datos sin la extensión .txt. Por ejemplo, si el archivo se llama red.txt, simplemente escribe red cuando el programa lo solicite.
+- Hay que incluir el archivo txt de acuerdo a la especificacion de este que se explicará acontinuación, en "data". 
+- Correr la clase "CantidadesMaximas" y luego Ingresar el nombre del archivo de datos sin la extensión .txt. Por ejemplo, si el archivo se llama red.txt, simplemente escribe red cuando el programa lo solicite.
 
 Explicación del archivo .txt que contiene los datos con los que se crea el grafo dirigido que representa una red de distribución : 
 Cada línea del archivo `.txt` representa un elemento diferente en la red de distribución, que incluye fábricas, librerías, bodegas y camiones. Aquí se explica cada tipo de línea:
