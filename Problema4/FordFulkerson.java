@@ -12,7 +12,7 @@ public class FordFulkerson {
         this.grafo = grafo;
     }
 
-    public boolean bfs(int source, int sink, Map<Integer, Integer> parent) {
+    public boolean bfs(int source, int sink, Map<Integer, Integer> anterior) {
         Map<Integer, Boolean> visited = new HashMap<>();
         for (Vertice vertice : grafo.getVertices().values()) {
             visited.put(vertice.getIdVertice(), false);
@@ -21,7 +21,7 @@ public class FordFulkerson {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(source);
         visited.put(source, true);
-        parent.put(source, -1);
+        anterior.put(source, -1);
 
         while (!queue.isEmpty()) {
             int u = queue.poll();
@@ -31,12 +31,12 @@ public class FordFulkerson {
                 int v = conexion.getDestino();
                 if (!visited.get(v) && conexion.getCapacidadCamion() > 0) {
                     if (v == sink) {
-                        parent.put(v, u);
+                        anterior.put(v, u);
                         return true;
                     }
                     queue.add(v);
                     visited.put(v, true);
-                    parent.put(v, u);
+                    anterior.put(v, u);
                 }
             }
         }
@@ -47,21 +47,21 @@ public class FordFulkerson {
     public int calcularFlujoMaximo() {
         int source = grafo.getIdSuperfuente();
         int sink = grafo.getIdSupersink();
-        Map<Integer, Integer> parent = new HashMap<>();
+        Map<Integer, Integer> anterior = new HashMap<>();
         int maxFlow = 0;
 
-        while (bfs(source, sink, parent)) {
+        while (bfs(source, sink, anterior)) {
             int pathFlow = Integer.MAX_VALUE;
-            for (int v = sink; v != source; v = parent.get(v)) {
-                int u = parent.get(v);
+            for (int v = sink; v != source; v = anterior.get(v)) {
+                int u = anterior.get(v);
                 Conexion conexion = grafo.encontrarConexion(u, v);
                 if (conexion != null) {
                     pathFlow = Math.min(pathFlow, conexion.getCapacidadCamion());
                 }
             }
 
-            for (int v = sink; v != source; v = parent.get(v)) {
-                int u = parent.get(v);
+            for (int v = sink; v != source; v = anterior.get(v)) {
+                int u = anterior.get(v);
                 Conexion conexion = grafo.encontrarConexion(u, v);
                 conexion.setCapacidadCamion(conexion.getCapacidadCamion() - pathFlow);
                 Conexion reverseConexion = grafo.encontrarConexion(v, u);

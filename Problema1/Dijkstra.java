@@ -25,11 +25,13 @@ public class Dijkstra {
                         verticeMenor = j;
                     }
                 }
+                distancias[verticeInicio] = 0; // Distancia al vértice de inicio es 0
+
                 arregloVisitados[verticeMenor] = true;
                 for (int v = 0; v < size; v++) {
-                    if (!arregloVisitados[v] && grafo[verticeMenor][v] > 0) { 
-                            distancias[v] = Math.min(distancias[v], distancias[verticeMenor] + grafo[verticeMenor][v]);
-                        }
+                    if (!arregloVisitados[v] && grafo[verticeMenor][v] != -1) {
+                        distancias[v] = Math.min(distancias[v], distancias[verticeMenor] + grafo[verticeMenor][v]);
+                    }
                     }
             }
         
