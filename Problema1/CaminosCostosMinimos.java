@@ -94,7 +94,7 @@ public class CaminosCostosMinimos {
     }
 
     private static void escribirMatriz(int[][] matriz, String userInput) {
-        String outputPath = "./data/OUT_" + userInput + ".txt"; // Nombre del archivo de salida
+        String outputPath = "./data/OUT_" + userInput + ".txt";
         
         try {
             FileWriter writer = new FileWriter(outputPath);
@@ -106,7 +106,7 @@ public class CaminosCostosMinimos {
                         writer.write(matriz[i][j] + " ");
                     }
                 }
-                writer.write("\n"); // Nueva línea al final de cada fila
+                writer.write("\n");
             }
             writer.close();
             System.out.println("Se ha creado el archivo " + outputPath + " correctamente.");
