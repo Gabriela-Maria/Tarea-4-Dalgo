@@ -16,7 +16,9 @@ public class CantidadesMaximas {
 
                     int id = Integer.parseInt(partes[1]);
                     char tipo = partes[0].charAt(0);
-                    Integer capacidad = (partes.length == 3) ? Integer.parseInt(partes[2]) : null;
+                    Integer capacidad;
+                    if (partes.length == 3) capacidad = Integer.parseInt(partes[2]);
+                    else capacidad = null;
                     grafo.agregarVertice(id, tipo, capacidad);
                 } else if (partes[0].equals("C")) {
                     // Para C, agregamos conexiones al grafo
