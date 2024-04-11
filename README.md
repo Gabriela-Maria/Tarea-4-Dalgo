@@ -47,6 +47,10 @@ Ejemplo grafico de entrada (mapUndirected):
 
 # Problema 4
 
+Para correr el programa seguir los siguientes pasos:
+1- Para poder probar el programa, hay que incluir el archivo txt de acuerdo a la especificacion de este que se explicará acontinuación, en "data". 
+2- Correr la clase "CantidadesMaximas" y luego Ingresar el nombre del archivo de datos sin la extensión .txt. Por ejemplo, si el archivo se llama red.txt, simplemente escribe red cuando el programa lo solicite.
+
 Explicación del archivo .txt que contiene los datos con los que se crea el grafo dirigido que representa una red de distribución : 
 Cada línea del archivo `.txt` representa un elemento diferente en la red de distribución, que incluye fábricas, librerías, bodegas y camiones. Aquí se explica cada tipo de línea:
 
