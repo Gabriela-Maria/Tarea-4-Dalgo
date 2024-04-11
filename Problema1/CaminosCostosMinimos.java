@@ -2,6 +2,8 @@ package Problema1;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CaminosCostosMinimos {
@@ -27,6 +29,7 @@ public class CaminosCostosMinimos {
         int algoritmoSelec = scannerFilename.nextInt();
 
         ejecutarAlgoritmoSeleccionado(algoritmoSelec, grafo);
+        
 
         scannerFilename.close();
     }
@@ -69,19 +72,19 @@ public class CaminosCostosMinimos {
 
             case 1: // Caso para Dijkstra
             int[][] distanciasDijkstra = Dijkstra.distanciasMinimas(grafo);
-            imprimirMatriz(distanciasDijkstra);
+            escribirMatriz(distanciasDijkstra, "dijkstra");
             break;
 
             case 2: // Caso para Bellman Ford
             int[][] distanciaBellman = BellmanFord.distanciasMinimas(grafo);
-            imprimirMatriz(distanciaBellman);
+            escribirMatriz(distanciaBellman,"bellmanFord");
             break;
             
 
             case 3: // Opción para Floyd Warschall
                 FloydWarschall floyd = new FloydWarschall();
                 int[][] distancias = floyd.floydWarschall(grafo);
-                imprimirMatriz(distancias);
+                escribirMatriz(distancias, "floydWarschall");
                 break;
                 
             default:
@@ -90,19 +93,27 @@ public class CaminosCostosMinimos {
         }
     }
 
-    private static void imprimirMatriz(int[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if (matriz[i][j] == Integer.MAX_VALUE) {
-                    System.out.print("INF ");
-                } else {
-                    System.out.print(matriz[i][j] + " ");
+    private static void escribirMatriz(int[][] matriz, String userInput) {
+        String outputPath = "./data/OUT_" + userInput + ".txt"; // Nombre del archivo de salida
+        
+        try {
+            FileWriter writer = new FileWriter(outputPath);
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    if (matriz[i][j] == Integer.MAX_VALUE) {
+                        writer.write("INF ");
+                    } else {
+                        writer.write(matriz[i][j] + " ");
+                    }
                 }
+                writer.write("\n"); // Nueva línea al final de cada fila
             }
-            System.out.println();
+            writer.close();
+            System.out.println("Se ha creado el archivo " + outputPath + " correctamente.");
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el archivo " + outputPath + ": " + e.getMessage());
         }
     }
-
 
 
 }
