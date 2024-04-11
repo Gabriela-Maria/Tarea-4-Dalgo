@@ -51,7 +51,7 @@ Para correr el programa seguir los siguientes pasos:
 |-------|--------|
 |5 |0,000505 |
 |100 |0,008868|
-|1000 | |
+|1000 | 6,128236 |
 
 # Problema 2
 Ejemplo grafico de entrada (distanceDisconnected2):
