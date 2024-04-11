@@ -27,6 +27,21 @@ public class Grafo {
         }
     }
 
+    public int agregarVerticeB(int idVertice, char tipo, Integer capacidad) {
+        if (!vertices.containsKey(idVertice)) {
+            vertices.put(idVertice, new Vertice(idVertice, tipo, 0)); // Capacidad 0 para bodegas y nodos especiales
+            if (tipo == 'B') {
+                // Añadir nodo B' con id positivo y capacidad nula
+                int idVerticeBPrima = idVertice + 1000; // Asumiendo que no hay conflicto de IDs
+                vertices.put(idVerticeBPrima, new Vertice(idVerticeBPrima, 'B', null));
+                // Conectar B a B' con la capacidad original de la bodega
+                agregarConexion(idVertice, idVerticeBPrima, capacidad);
+                return idVerticeBPrima;
+            }
+        }
+        return 0;
+    }
+
     public void agregarConexion(int origen, int destino, Integer capacidadCamion) {
         Vertice verticeOrigen = vertices.get(origen);
         if (verticeOrigen != null) {
