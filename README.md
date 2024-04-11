@@ -27,7 +27,30 @@ Para correr el programa seguir los siguientes pasos:
 |Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en 'OUT_floydWarschall.txt' de la carpeta data al correr el programa.|
 
 
+Comparación de tiempos de ejecución:
+### Dijkstra
 
+|Tamaño |Tiempo (s) |
+|-------|--------|
+|5 |0,000751 |
+|100 |0,008546|
+|1000 |5,178436|
+
+### Bellman Ford
+
+|Tamaño |Tiempo (s) |
+|-------|--------|
+|5 |0,000572 |
+|100 |0,025551|
+|1000 |13,247676 |
+
+### Floyd Warschall
+
+|Tamaño |Tiempo (s) |
+|-------|--------|
+|5 |0,000505 |
+|100 |0,008868|
+|1000 | |
 
 # Problema 2
 Ejemplo grafico de entrada (distanceDisconnected2):
