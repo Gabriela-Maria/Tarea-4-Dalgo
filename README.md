@@ -56,13 +56,13 @@ Cada línea del archivo `.txt` representa un elemento diferente en la red de dis
 
 ### Fábricas (`F`)
 
-- **Descripción**: Representan los puntos de origen de los productos.
+- **Descripción**: Representan los puntos de origen de los libros.
 - **Formato**: `F,<id de la fábrica>`
 - **Ejemplo**: `F,1` - Una fábrica con identificador `1`.
 
 ### Librerías (`L`)
 
-- **Descripción**: Representan los puntos de destino de los productos.
+- **Descripción**: Representan los puntos de destino de los libros.
 - **Formato**: `L,<id de la librería>`
 - **Ejemplo**: `L,8` - Una librería con identificador `8`.
 
