@@ -16,6 +16,34 @@ public class Vertice {
         this.conexiones = new ArrayList<>();
     }
 
+    public int getIdVertice() {
+        return idVertice;
+    }
+
+    public void setIdVertice(int idVertice) {
+        this.idVertice = idVertice;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
+    }
+
+    public Integer getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(Integer capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public void setConexiones(List<Conexion> conexiones) {
+        this.conexiones = conexiones;
+    }
+
     public void agregarConexion(int destino, Integer capacidadCamion) {
         conexiones.add(new Conexion(destino, capacidadCamion));
     }
