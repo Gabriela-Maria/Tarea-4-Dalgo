@@ -82,5 +82,5 @@ Cada línea del archivo `.txt` representa un elemento diferente en la red de dis
 
 |E/S|Descripcion|
 |-------|--------|
-|Entrada| archivo que define la estructura completa del grafo dirigido. |
+|Entrada| Archivo que define la estructura completa del grafo dirigido. |
 |Salida| Cantidad máxima de libros que pueden ser distribuidos desde las fábricas hasta las librerías bajo las restricciones de capacidad de los camiones y bodegas. |
