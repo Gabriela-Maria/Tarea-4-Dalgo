@@ -38,5 +38,15 @@ public class Grafo {
         }
     }
 
-    // Método para conectar con superfuente y supersink y otros métodos necesarios...
-}
+    public void conectarConSuperfuenteYSupersink() {
+        for (Vertice nodo : vertices.values()) {
+            if (nodo.getTipo() == 'F') {
+                // Conectar el superfuente (ID -1) a cada fábrica con capacidad "infinita"
+                agregarConexion(idSuperfuente, nodo.getIdVertice(), Integer.MAX_VALUE);
+            } else if (nodo.getTipo() == 'L') {
+                // Conectar cada librería al supersink (ID -2) con capacidad "infinita"
+                agregarConexion(nodo.getIdVertice(), idSupersink, Integer.MAX_VALUE);
+            }
+        }
+    }
+    }

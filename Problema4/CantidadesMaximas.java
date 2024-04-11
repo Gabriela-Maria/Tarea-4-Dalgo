@@ -7,8 +7,8 @@ import java.io.IOException;
 public class CantidadesMaximas {
     Grafo grafo = new Grafo(); 
 
-    public void cargarDesdeArchivo(String nombreArchivo) {
-        try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
+    public void cargarDesdeArchivo(String filename) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(",");
