@@ -1,5 +1,7 @@
 # Tarea-4-Dalgo
 Por Gabriela Escobar y Maria Alejandra Pinzon
+Para ver el readme en mejor formato: https://github.com/Gabriela-Maria/Tarea-4-Dalgo.git
+
 
 # Problema 1
 
