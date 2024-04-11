@@ -10,6 +10,39 @@ import java.util.Scanner;
 
 public class Problema2 {
 
+    public ArrayList<Queue<Integer>> bfs(int[][] grafo){
+        int n = grafo.length;
+        boolean[] visitados = new boolean[n];
+        Queue<Integer> queue = new LinkedList<>();
+        ArrayList<Queue<Integer>> respuesta = new ArrayList<>();
+        for (int u = 0; u<grafo.length;u++){
+            queue.add(u);
+            Queue<Integer> cc = new LinkedList<>();
+            while(0<queue.size()){
+                int v = queue.poll();
+                if (!visitados[v]){
+                    visitados[v] = true;
+                    if (cc.contains(v)==false){
+                        cc.add(v);
+                    }
+                    for (int i = 0; i<grafo[v].length; i++){
+                        if (grafo[v][i] == 1 && !visitados[i]){
+                            queue.add(i);
+                            if (cc.contains(i)==false){
+                                cc.add(i);
+                            }
+                        }
+                    }
+                } 
+            }
+            if (!cc.isEmpty()) respuesta.add(cc);
+
+        }
+
+        return respuesta;
+        
+    }
+
     public int[][] loadingFile(String fileName) throws IOException {
         String filePath = Paths.get("data", fileName).toString();
 
@@ -56,39 +89,6 @@ public class Problema2 {
         reader.close();
 
         return grafo;
-    }
-
-    public ArrayList<Queue<Integer>> bfs(int[][] grafo){
-        int n = grafo.length;
-        boolean[] visitados = new boolean[n];
-        Queue<Integer> queue = new LinkedList<>();
-        ArrayList<Queue<Integer>> respuesta = new ArrayList<>();
-        for (int u = 0; u<grafo.length;u++){
-            queue.add(u);
-            Queue<Integer> cc = new LinkedList<>();
-            while(0<queue.size()){
-                int v = queue.poll();
-                if (!visitados[v]){
-                    visitados[v] = true;
-                    if (cc.contains(v)==false){
-                        cc.add(v);
-                    }
-                    for (int i = 0; i<grafo[v].length; i++){
-                        if (grafo[v][i] == 1 && !visitados[i]){
-                            queue.add(i);
-                            if (cc.contains(i)==false){
-                                cc.add(i);
-                            }
-                        }
-                    }
-                } 
-            }
-            if (!cc.isEmpty()) respuesta.add(cc);
-
-        }
-
-        return respuesta;
-        
     }
 
     public static void main(String[] args) {

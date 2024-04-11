@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CantidadesMaximas {
     Grafo grafo = new Grafo(); 
@@ -54,7 +55,18 @@ public class CantidadesMaximas {
     }
     public static void main(String[] args) {
         CantidadesMaximas cargador = new CantidadesMaximas();
-        cargador.cargarDesdeArchivo("data/red.txt");
-        cargador.calcularFlujoMaximo(); 
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.print("Nombre de archivo txt de prueba en carpeta data (ej: red): ");
+            String filename = scanner.nextLine();
+            scanner.close();
+
+            cargador.cargarDesdeArchivo("data/" + filename + ".txt");
+            cargador.calcularFlujoMaximo(); 
+        } catch (Exception e) {
+            System.err.println("Error al ejecutar el programa: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
