@@ -1,5 +1,34 @@
 # Tarea-4-Dalgo
 Por Gabriela Escobar y Maria Alejandra Pinzon
+
+# Problema 1
+
+Para correr el programa seguir los siguientes pasos:
+1- Para poder probar el programa, hay que incluir el archivo con los valores de la matriz en la carpeta "data". 
+2- Correr la clase "CaminosCostosMinimos" y luego Ingresar el nombre del archivo de datos sin la extensión .txt. Por ejemplo, si el archivo se llama distances5.txt, simplemente escribe distances cuando el programa lo solicite.
+3- Luego ingresa el número correspondiente al algoritmo que deseas usar (1 para Dijkstra, 2 para Bellman Ford, 3 para Floyd Warschall).
+
+# Problema 1.1 Dijkstra
+
+|E/S|Descripcion|
+|-------|--------|
+|Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. Hay 3 posibilidades de valores en esta matriz. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. La ultima posibilidad para los valores de esta matriz es que el valor sea positivo representando el costo de ir de un vertice al otro.|
+|Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en un out al correr el programa.|
+
+# Problema 1.2 Bellman Ford
+
+|E/S|Descripcion|
+|-------|--------|
+|Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. Los otros valores, que pueden ser tanto positivos como negativos, representan el costo de ir de un vertice a otro.|
+|Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en un out al correr el programa.|
+
+# Problema 1.3 Floyd Warschall
+
+|E/S|Descripcion|
+|-------|--------|
+|Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. Hay 3 posibilidades de valores en esta matriz. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. La ultima posibilidad para los valores de esta matriz es que el valor sea positivo representando el costo de ir de un vertice al otro.|
+|Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en un out al correr el programa.|
+
 # Problema 2
 Ejemplo grafico de entrada (distanceDisconnected2):
 ![Captura de pantalla 2024-04-09 120633](https://github.com/Gabriela-Maria/Tarea-4-Dalgo/assets/123558557/6d018ea9-b6b6-483a-9b0f-2447dc060a3e)
