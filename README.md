@@ -47,7 +47,7 @@ Ejemplo grafico de entrada (mapUndirected):
 
 # Problema 4
 
-Explicación del archivo red.txt que contiene los datos con los que se crea el grafo dirigido que representa una red de distribución : 
+Explicación del archivo .txt que contiene los datos con los que se crea el grafo dirigido que representa una red de distribución : 
 1- Cada línea del archivo representa un elemento diferente en la red: fábricas (F), librerías (L), bodegas (B), y camiones (C).
 Fabricas: Incluyen el identificador 'F' y el id de la fabrica. Ejemplo: F,1 representa una fábrica con identificador 1.
 Librerías: Incluyen el identificador 'L' y el id de la fabrica. Ejemplo: L,1 representa una libreria con identificador 1.
@@ -57,5 +57,5 @@ Camiones: Incluyen el identificador 'C', el vertice origen (que debe ser una fab
 
 |E/S|Descripcion|
 |-------|--------|
-|Entrada| |
-|Salida| |
+|Entrada| archivo que define la estructura completa del grafo dirigido. |
+|Salida| Cantidad máxima de libros que pueden ser distribuidos desde las fábricas hasta las librerías bajo las restricciones de capacidad de los camiones y bodegas. |
