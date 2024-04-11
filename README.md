@@ -48,11 +48,32 @@ Ejemplo grafico de entrada (mapUndirected):
 # Problema 4
 
 Explicación del archivo .txt que contiene los datos con los que se crea el grafo dirigido que representa una red de distribución : 
-1- Cada línea del archivo representa un elemento diferente en la red: fábricas (F), librerías (L), bodegas (B), y camiones (C).
-Fabricas: Incluyen el identificador 'F' y el id de la fabrica. Ejemplo: F,1 representa una fábrica con identificador 1.
-Librerías: Incluyen el identificador 'L' y el id de la fabrica. Ejemplo: L,1 representa una libreria con identificador 1.
-Bodegas: Incluyen el identificador 'B', el id de la bodega y la capacidad de la bodega. Ejemplo: B,1,2 representa una bodega con identificador 1 y con capacidad 2.
-Camiones: Incluyen el identificador 'C', el vertice origen (que debe ser una fabrica o bodega), el vertice desrino (que debe ser una bodega o una libreria) y la capacidad del camion. Ejemplo: C,1,2,3 representa un camion que va de la fabrica con id 1 a la bodega con id 2, con una capacidad de 3.
+Cada línea del archivo `.txt` representa un elemento diferente en la red de distribución, que incluye fábricas, librerías, bodegas y camiones. Aquí se explica cada tipo de línea:
+
+### Fábricas (`F`)
+
+- **Descripción**: Representan los puntos de origen de los productos.
+- **Formato**: `F,<id de la fábrica>`
+- **Ejemplo**: `F,1` - Una fábrica con identificador `1`.
+
+### Librerías (`L`)
+
+- **Descripción**: Representan los puntos de destino de los productos.
+- **Formato**: `L,<id de la librería>`
+- **Ejemplo**: `L,8` - Una librería con identificador `8`.
+
+### Bodegas (`B`)
+
+- **Descripción**: Actúan como puntos intermedios de almacenamiento.
+- **Formato**: `B,<id de la bodega>,<capacidad de la bodega>`
+- **Ejemplo**: `B,4,3` - Una bodega con identificador `4` y capacidad de almacenamiento de `3`.
+
+### Camiones (`C`)
+
+- **Descripción**: Representan las rutas de transporte entre los puntos de la red.
+- **Formato**: `C,<id origen>,<id destino>,<capacidad del camión>`
+- **Ejemplo**: `C,1,4,1` - Un camión que va de la fábrica `1` a la bodega `4` con una capacidad de `1`.
+
 
 
 |E/S|Descripcion|
