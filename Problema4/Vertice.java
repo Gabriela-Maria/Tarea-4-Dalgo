@@ -6,7 +6,7 @@ import java.util.List;
 public class Vertice {
     private int idVertice;
     private char tipo; // 'F' para fábrica, 'L' para librería, 'B' para bodega
-    private Integer capacidad; // Puede ser null para fábricas y librerías
+    private Integer capacidad; // null en fabrica y libreria al inicio
     private List<Conexion> conexiones;
 
     public Vertice(int idVertice, char tipo, Integer capacidad) {
@@ -48,12 +48,9 @@ public class Vertice {
         conexiones.add(new Conexion(destino, capacidadCamion));
     }
 
-    // Getters y setters según sea necesario
 
     public List<Conexion> getConexiones() {
         return conexiones;
     }
-
-    // Puede agregar más métodos aquí según sea necesario
 }
 

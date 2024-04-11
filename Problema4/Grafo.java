@@ -18,10 +18,9 @@ public class Grafo {
         if (!vertices.containsKey(idVertice)) {
             vertices.put(idVertice, new Vertice(idVertice, tipo, 0)); // Capacidad 0 para bodegas y nodos especiales
             if (tipo == 'B') {
-                // Añadir nodo B' con id positivo y capacidad nula
-                int idVerticeBPrima = idVertice + 1000; // Asumiendo que no hay conflicto de IDs
+                int idVerticeBPrima = idVertice + 1000; // para que no hayan ids repetidos
                 vertices.put(idVerticeBPrima, new Vertice(idVerticeBPrima, 'B', null));
-                // Conectar B a B' con la capacidad original de la bodega
+                // Conectar B a B' 
                 agregarConexion(idVertice, idVerticeBPrima, capacidad);
             }
         }
@@ -29,12 +28,10 @@ public class Grafo {
 
     public int agregarVerticeB(int idVertice, char tipo, Integer capacidad) {
         if (!vertices.containsKey(idVertice)) {
-            vertices.put(idVertice, new Vertice(idVertice, tipo, 0)); // Capacidad 0 para bodegas y nodos especiales
+            vertices.put(idVertice, new Vertice(idVertice, tipo, 0)); 
             if (tipo == 'B') {
-                // Añadir nodo B' con id positivo y capacidad nula
-                int idVerticeBPrima = idVertice + 1000; // Asumiendo que no hay conflicto de IDs
+                int idVerticeBPrima = idVertice + 1000; 
                 vertices.put(idVerticeBPrima, new Vertice(idVerticeBPrima, 'B', null));
-                // Conectar B a B' con la capacidad original de la bodega
                 agregarConexion(idVertice, idVerticeBPrima, capacidad);
                 return idVerticeBPrima;
             }
@@ -52,15 +49,49 @@ public class Grafo {
     public void conectarConSuperfuenteYSupersink() {
         for (Vertice nodo : vertices.values()) {
             if (nodo.getTipo() == 'F') {
-                // Conectar el superfuente (ID -1) a cada fábrica con capacidad "infinita"
                 agregarConexion(idSuperfuente, nodo.getIdVertice(), Integer.MAX_VALUE);
             } else if (nodo.getTipo() == 'L') {
-                // Conectar cada librería al supersink (ID -2) con capacidad "infinita"
                 agregarConexion(nodo.getIdVertice(), idSupersink, Integer.MAX_VALUE);
             }
         }
     }
 
+    public int encontrarCapacidadConexion(int origen, int destino) {
+        Vertice verticeOrigen = vertices.get(origen);
+        if (verticeOrigen != null) {
+            for (Conexion conexion : verticeOrigen.getConexiones()) {
+                if (conexion.getDestino() == destino) {
+                    return conexion.getCapacidadCamion(); 
+                }
+            }
+        }
+        return 0; 
+    }
+    
+    public void actualizarCapacidadConexion(int origen, int destino, int nuevaCapacidad) {
+        Vertice verticeOrigen = vertices.get(origen);
+        if (verticeOrigen != null) {
+            for (Conexion conexion : verticeOrigen.getConexiones()) {
+                if (conexion.getDestino() == destino) {
+                    conexion.setCapacidadCamion(nuevaCapacidad); 
+                    return;
+                }
+            }
+            verticeOrigen.agregarConexion(destino, nuevaCapacidad);
+        }
+    }
+
+    public Conexion encontrarConexion(int origen, int destino) {
+        Vertice verticeOrigen = vertices.get(origen);
+        if (verticeOrigen != null) {
+            for (Conexion conexion : verticeOrigen.getConexiones()) {
+                if (conexion.getDestino() == destino) {
+                    return conexion; 
+                }
+            }
+        }
+        return null; 
+    }
     
     public Map<Integer, Vertice> getVertices() {
         return vertices;

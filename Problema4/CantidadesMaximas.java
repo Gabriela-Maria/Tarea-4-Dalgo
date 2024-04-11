@@ -45,24 +45,16 @@ public class CantidadesMaximas {
             e.printStackTrace();
         }
     }
+    
 
-    public void imprimirRed() {
-        System.out.println("Vertices:");
-        for (Vertice vertice : grafo.getVertices().values()) {
-            String tipo = String.valueOf(vertice.getTipo());
-            System.out.println("ID: " + vertice.getIdVertice() + ", Tipo: " + tipo + ", Capacidad: " + vertice.getCapacidad());
-        }
-        System.out.println("Conexiones:");
-        for (Vertice vertice : grafo.getVertices().values()) {
-            for (Conexion conexion : vertice.getConexiones()) {
-                System.out.println("De: " + vertice.getIdVertice() + " a " + conexion.getDestino() + ", Capacidad: " + conexion.getCapacidadCamion());
-            }
-        }
+    public void calcularFlujoMaximo() {
+        FordFulkerson fordFulkerson = new FordFulkerson(grafo);
+        int maxFlow = fordFulkerson.calcularFlujoMaximo();
+        System.out.println("Flujo máximo: " + maxFlow);
     }
-
     public static void main(String[] args) {
         CantidadesMaximas cargador = new CantidadesMaximas();
         cargador.cargarDesdeArchivo("data/red.txt");
-        cargador.imprimirRed();
+        cargador.calcularFlujoMaximo(); 
     }
 }
