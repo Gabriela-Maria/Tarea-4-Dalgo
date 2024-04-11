@@ -4,9 +4,9 @@ Por Gabriela Escobar y Maria Alejandra Pinzon
 # Problema 1
 
 Para correr el programa seguir los siguientes pasos:
-1- Para poder probar el programa, hay que incluir el archivo con los valores de la matriz en la carpeta "data". 
-2- Correr la clase "CaminosCostosMinimos" y luego Ingresar el nombre del archivo de datos sin la extensión .txt. Por ejemplo, si el archivo se llama distances5.txt, simplemente escribe distances5 cuando el programa lo solicite.
-3- Luego ingresa el número correspondiente al algoritmo que deseas usar (1 para Dijkstra, 2 para Bellman Ford, 3 para Floyd Warschall).
+- Para poder probar el programa, hay que incluir el archivo con los valores de la matriz en la carpeta "data". 
+- Correr la clase "CaminosCostosMinimos" y luego Ingresar el nombre del archivo de datos sin la extensión .txt. Por ejemplo, si el archivo se llama distances5.txt, simplemente escribe distances5 cuando el programa lo solicite.
+- Luego ingresa el número correspondiente al algoritmo que deseas usar (1 para Dijkstra, 2 para Bellman Ford, 3 para Floyd Warschall).
 
 # Problema 1.1 Dijkstra
 |E/S|Descripcion|
@@ -25,6 +25,32 @@ Para correr el programa seguir los siguientes pasos:
 |-------|--------|
 |Entrada| Una matriz cuadrada donde cada fila (i) y columna (j) representa un vertice del grafo, y el valor en la posición i, j indica el costo de ir directamente del vertice i al vertice j. Hay 3 posibilidades de valores en esta matriz. El valor -1 en la posición i,j significa que no hay un arco del vertice i al vertice j.  El valor de 0  indica que el costo de ir de un vertice a si mismo es nulo. La ultima posibilidad para los valores de esta matriz es que el valor sea positivo representando el costo de ir de un vertice al otro.|
 |Salida|  Una matriz de costos mínimos que indica por cada vertice i el costo mínimo para llegar de este vertice a todos los demás vertices j. Esta salida se guarda en 'OUT_floydWarschall.txt' de la carpeta data al correr el programa.|
+
+
+Comparación de tiempos de ejecución:
+### Dijkstra
+
+|Tamaño |Tiempo (s) |
+|-------|--------|
+|5 |0,000751 |
+|100 |0,008546|
+|1000 |5,178436|
+
+### Bellman Ford
+
+|Tamaño |Tiempo (s) |
+|-------|--------|
+|5 |0,000572 |
+|100 |0,025551|
+|1000 |13,247676 |
+
+### Floyd Warschall
+
+|Tamaño |Tiempo (s) |
+|-------|--------|
+|5 |0,000505 |
+|100 |0,008868|
+|1000 | |
 
 # Problema 2
 Ejemplo grafico de entrada (distanceDisconnected2):
