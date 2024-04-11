@@ -4,37 +4,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Grafo {
-    private Map<Integer, Nodo> nodos;
+    private Map<Integer, Vertice> vertices;
     private final int idSuperfuente = -1;
     private final int idSupersink = -2;
 
     public Grafo() {
-        this.nodos = new HashMap<>();
-        nodos.put(idSuperfuente, new Nodo(idSuperfuente, 'S', null));
-        nodos.put(idSupersink, new Nodo(idSupersink, 'S', null));
+        this.vertices = new HashMap<>();
+        vertices.put(idSuperfuente, new Vertice(idSuperfuente, 'S', null));
+        vertices.put(idSupersink, new Vertice(idSupersink, 'S', null));
     }
 
-    public void agregarNodo(int idNodo, char tipo, Integer capacidad) {
-        if (!nodos.containsKey(idNodo)) {
-            nodos.put(idNodo, new Nodo(idNodo, tipo, 0)); // Capacidad 0 para bodegas y nodos especiales
+    public void agregarVertice(int idVertice, char tipo, Integer capacidad) {
+        if (!vertices.containsKey(idVertice)) {
+            vertices.put(idVertice, new Vertice(idVertice, tipo, 0)); // Capacidad 0 para bodegas y nodos especiales
             if (tipo == 'B') {
                 // Añadir nodo B' con id positivo y capacidad nula
-                int idNodoBPrima = idNodo + 1000; // Asumiendo que no hay conflicto de IDs
-                nodos.put(idNodoBPrima, new Nodo(idNodoBPrima, 'B', null));
+                int idVerticeBPrima = idVertice + 1000; // Asumiendo que no hay conflicto de IDs
+                vertices.put(idVerticeBPrima, new Vertice(idVerticeBPrima, 'B', null));
                 // Conectar B a B' con la capacidad original de la bodega
-                agregarConexion(idNodo, idNodoBPrima, capacidad);
+                agregarConexion(idVertice, idVerticeBPrima, capacidad);
             }
         }
     }
 
     public void agregarConexion(int origen, int destino, Integer capacidadCamion) {
-        Nodo nodoOrigen = nodos.get(origen);
-        if (nodoOrigen != null && nodoOrigen.getTipo() == 'B' && !nodos.containsKey(destino + 1000)) {
+        Vertice verticeOrigen = vertices.get(origen);
+        if (verticeOrigen != null && verticeOrigen.getTipo() == 'B' && !vertices.containsKey(destino + 1000)) {
             // Si el origen es una bodega y el destino no es un nodo B', ajustar a B'
             destino += 1000;
         }
-        if (nodoOrigen != null) {
-            nodoOrigen.agregarConexion(destino, capacidadCamion);
+        if (verticeOrigen != null) {
+            verticeOrigen.agregarConexion(destino, capacidadCamion);
         }
     }
 
