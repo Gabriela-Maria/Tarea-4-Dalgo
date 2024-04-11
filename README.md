@@ -17,4 +17,4 @@ Ejemplo grafico de entrada (mapUndirected):
 |-------|--------|
 |Entrada| El programa recibe un "mapa" de la ciudad compuesto de las esquinas y el costo de hacer las calles que lo componen doble vía. Se recibe como entrada una matriz de tres columnas: la primera indica la esquina 1 (vertice 1), la segunda la esquina 2 (vertice 2), y la tercera es el costo de convertir la calle que conecta ambas esquinas  en doble vía (peso del arco que conecta esos vertices). Para poder probar el programa, hay que incluir el archivo con los valores de la matriz en la carpeta "data". Adicionalmente, cuando se corra el programa, hay que poner el nombre del archivo que se esta probando. Cuando se ponga el nombre, no se tiene que escribir .txt. Un ejemplo de esto es escribir en consola mapUndirected.|
 |Salida| El costo mínimo de hacer las implementaciones necesarias a la ciudad para convertirla en doble vía, el costo mínimo del MST encontrado|
-|Salida| Las callesque ahora deben ser doble vías, los arcos que hacen parte del MST.|
+|Salida| Las calles que ahora deben ser doble vías, los arcos que hacen parte del MST.|
